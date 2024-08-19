@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Thông tin cấu hình</title>
+</head>
+<body>
+<h1>Thông tin cấu hình đã lưu</h1>
+<p>Ngôn ngữ: <span th:text="${email.languages}"></span></p>
+<p>Kích thước trang: <span th:text="${email.pageSizes}"></span> emails per page</p>
+<p>Lọc spam: <span th:text="${email.spamsFilter} ? 'Bật' : 'Tắt'"></span></p>
+<p>Chữ ký: <span th:text="${email.signature}"></span></p>
+</body>
+</html>

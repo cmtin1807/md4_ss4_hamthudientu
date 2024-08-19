@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Email Configuration</title>
+</head>
+<body>
+<h1>Cấu hình hòm thư điện tử</h1>
+<form th:action="@{/save}" method="post" th:object="${email}">
+    <div>
+        <label for="languages">Languages:   </label>
+        <select th:field="*{languages}" id="languages">
+            <option th:each="lang: ${languages}" th:text="${lang.getLanguage()}" th:value="${lang.getLanguage()}"></option>
+        </select>
+    </div>
+    <div>
+        <label for="pageSize">PageSize:    </label>
+        <select th:field="*{pageSizes}" id="pageSize">
+            <option th:each="size:${pageSizes}" th:value="${size.getWidth()}" th:text="${size.getWidth()}"></option>
+        </select>
+    </div>
+    <div>
+        <label for="spamsFilter">Spams Filter: </label>
+        <input type="checkbox" id="spamsFilter" th:field="*{spamsFilter}">
+    </div>
+    <div>
+        <label for="signature">Signature: </label>
+        <textarea th:field="*{signature}" rows="4" cols="40" id="signature"></textarea>
+    </div>
+    <input type="submit" value="Nguyen Dep trai">
+</form>
+</body>
+</html>
